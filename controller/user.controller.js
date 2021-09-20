@@ -29,6 +29,19 @@ const userController = {
         } catch (error) {
             res.status(500).json(error)
         }
+    },
+
+    addFavoutireTodo: async function (req, res){
+        const {todoid} = req.params
+        const {_id} = req.user
+        try {
+            const addTodo = await User.findByIdAndUpdate(_id, { $push: {userTodos: todoid} }, {new: true} )
+    
+            res.status(200).send(addTodo)
+            
+        } catch (error) {
+            res.status(500).send(error)
+        }
     }
 
 }

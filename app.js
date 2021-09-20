@@ -17,9 +17,9 @@ app.use(cors())
 
 
 // Routes
-app.use('/', newUsers)
 app.use('/',  authRoutes)
 app.use(auth)
+app.use('/', newUsers)
 app.use('/',  todoRoutes)
 
 

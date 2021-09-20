@@ -6,7 +6,7 @@ const auth = require('../controller/token.controller')
 
 const router = Router()
 
-router.get('/todo', auth,  controllerTodo.getAllTodos )
+router.get('/todo', controllerTodo.getAllTodos )
 router.post('/todo', controllerTodo.createTodo)
 router.put('/todo/:id', controllerTodo.editTodo)
 router.delete('/todo/:id', controllerTodo.deleteTodo)
